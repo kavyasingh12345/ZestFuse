@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const userSchema = mongoose.Schema({
+const ownerSchema = mongoose.Schema({
     canteen_name : String,
     fullname : String ,
     email : String ,
@@ -15,4 +15,4 @@ const userSchema = mongoose.Schema({
 
 })
 
-module.exports = mongoose.model("user",userSchema);
+module.exports = mongoose.model("owner",ownerSchema);
