@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 
 import FoodItemCard from "./components/FoodItemCard";
 import Menu from "./pages/Menu";
+import Cart from "./components/Cart";
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
           <Route exact path="/" element ={<MainContent/>}/>
           <Route exact path="/Login" element ={<LoginForm/>}/>
           <Route exact path="/menu" element ={<Menu/>}/>
+          <Route exact path="/cart" element ={<Cart/>}/>
         </Routes>
         <Footer/>
       </>
