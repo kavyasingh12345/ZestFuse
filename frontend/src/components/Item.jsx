@@ -4,8 +4,8 @@ const FoodItemCard = ({ title, description, price }) => {
   const [quantity, setQuantity] = useState(1);
 
   return (
-    <div className="flex flex-wrap justify-between gap-4 p-4">
-      <div className="w-72 p-4 bg-gradient-to-br from-orange-500 to-orange-400 text-white rounded-lg shadow-lg transform transition-transform hover:scale-105">
+    <div className="flex flex-wrap justify-between gap-3 p-3">
+      <div className="w-61 p-4 bg-gradient-to-br from-orange-500 to-orange-400 text-white rounded-lg shadow-lg transform transition-transform hover:scale-105">
         <img
           src="https://www.shutterstock.com/image-photo/burger-tomateoes-lettuce-pickles-on-600nw-2309539129.jpg"
           alt={title}

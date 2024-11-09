@@ -1,6 +1,5 @@
-// Navbar.jsx
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -8,22 +7,29 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center px-4">
         <div className="text-2xl font-bold">
           <span className="text-black">Zest</span>
-          <span className="text-gray-300">Fuse.</span>
+          <span className="text-orange-600">Fuse.</span>
         </div>
         <nav className="space-x-6">
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `text-black hover:text-orange-600 ${isActive ? "text-orange-700" : ""}`
+              `text-black hover:text-orange-600 ${isActive ? "text-orange-700 font-bold" : ""}`
             }
           >
             Home
           </NavLink>
-          
+          <NavLink
+            to="/cart"
+            className={({ isActive }) =>
+              `text-black hover:text-orange-600 ${isActive ? "text-orange-700 font-bold" : ""}`
+            }
+          >
+            Cart
+          </NavLink>
           <NavLink
             to="/menu"
             className={({ isActive }) =>
-              `text-black hover:text-orange-600 ${isActive ? "text-orange-700" : ""}`
+              `text-black hover:text-orange-600 ${isActive ? "text-orange-700 font-bold" : ""}`
             }
           >
             Menu
@@ -31,18 +37,10 @@ const Navbar = () => {
           <NavLink
             to="/login"
             className={({ isActive }) =>
-              `text-black hover:text-orange-600 ${isActive ? "text-orange-700" : ""}`
+              `text-black hover:text-orange-600 ${isActive ? "text-orange-700 font-bold" : ""}`
             }
           >
             Login
-          </NavLink>
-          <NavLink
-            to="/cart"
-            className={({ isActive }) =>
-              `text-black hover:text-orange-600 ${isActive ? "text-orange-700" : ""}`
-            }
-          >
-            Cart
           </NavLink>
         </nav>
       </div>

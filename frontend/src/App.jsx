@@ -1,31 +1,21 @@
-import React, { useState } from "react";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "./index.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Homepage from "./pages/Homepage";
-import LoginForm from "./pages/Login";
-import MainContent from "./components/MainContent";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+// App.js
+import React from 'react';
+import Homepage from './pages/Homepage';
+// import Admin from './pages/Admin';
+import { Route, Routes } from 'react-router-dom';
+// import { CartProvider } from './context/CartContext';
 
-import FoodItemCard from "./components/FoodItemCard";
-import Menu from "./pages/Menu";
-import Cart from "./components/Cart";
-
-
-const App = () => {
+function App() {
   return (
-      <>
-        <Navbar/>
-        <Routes>
-          <Route exact path="/" element ={<MainContent/>}/>
-          <Route exact path="/Login" element ={<LoginForm/>}/>
-          <Route exact path="/menu" element ={<Menu/>}/>
-          <Route exact path="/cart" element ={<Cart/>}/>
-        </Routes>
-        <Footer/>
-      </>
+    // <CartProvider>
+      <Routes>
+        <Route path="*" element={<Homepage />} />
+        {/* <Route path="/admin/" element={<Admin />} /> */}
+      </Routes>
+    // </CartProvider>
   );
-};
+}
+
+
 
 export default App;
