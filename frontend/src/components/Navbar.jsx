@@ -19,6 +19,14 @@ const Navbar = () => {
             Home
           </NavLink>
           <NavLink
+            to="/menu"
+            className={({ isActive }) =>
+              `text-black hover:text-orange-600 ${isActive ? "text-orange-700 font-bold" : ""}`
+            }
+          >
+            Menu
+          </NavLink>
+          <NavLink
             to="/cart"
             className={({ isActive }) =>
               `text-black hover:text-orange-600 ${isActive ? "text-orange-700 font-bold" : ""}`
@@ -27,12 +35,12 @@ const Navbar = () => {
             Cart
           </NavLink>
           <NavLink
-            to="/menu"
+            to="/register"
             className={({ isActive }) =>
               `text-black hover:text-orange-600 ${isActive ? "text-orange-700 font-bold" : ""}`
             }
           >
-            Menu
+            Register
           </NavLink>
           <NavLink
             to="/login"

@@ -18,13 +18,12 @@ const LoginForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform form validation here (e.g., check if email and password are provided)
     console.log('Form submitted', formData);
-    // You can add logic to handle the login here
+    // Add logic to handle the login here
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
+    <div className="flex justify-center items-center h-screen bg-gradient-to-r from-orange-300 via-orange-400 to-orange-500">
       <div className="bg-white p-8 rounded-lg shadow-md w-full sm:w-96">
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
         <form onSubmit={handleSubmit}>

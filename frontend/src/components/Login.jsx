@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 const Login = () => {
   const [formData, setFormData] = useState({
     email: '',
-    role: '',
     password: '',
   });
 
@@ -20,7 +19,7 @@ const Login = () => {
     e.preventDefault();
     // Perform form validation here (e.g., check if email and password are provided)
     console.log('Form submitted', formData);
-    // You can add logic to handle the login here
+    // Add logic to handle the login here
   };
 
   return (
@@ -39,22 +38,6 @@ const Login = () => {
               className="w-full mt-2 p-2 border border-gray-300 rounded-md"
               required
             />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="role" className="block text-gray-700 font-medium">Role</label>
-            <select
-              id="role"
-              name="role"
-              value={formData.role}
-              onChange={handleChange}
-              className="w-full mt-2 p-2 border border-gray-300 rounded-md"
-              required
-            >
-              <option value="">Select Role</option>
-              <option value="owner">Owner</option>
-              <option value="staff">Staff</option>
-              <option value="student">Student</option>
-            </select>
           </div>
           <div className="mb-6">
             <label htmlFor="password" className="block text-gray-700 font-medium">Password</label>

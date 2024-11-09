@@ -1,45 +1,51 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useCart } from '../context/CartContext';
 
-const FoodItemCard = ({ title, description, price }) => {
-  const [quantity, setQuantity] = useState(1);
+const Item = ({ item }) => {
+  const { cart, addToCart } = useCart();
+  const itemCount = cart[item.name]?.quantity || 0;
+
+  const increaseItemCount = () => {
+    addToCart(item, 1);
+  };
+
+  const decreaseItemCount = () => {
+    if (itemCount > 0) {
+      addToCart(item, -1);
+    }
+  };
 
   return (
-    <div className="flex flex-wrap justify-between gap-3 p-3">
-      <div className="w-61 p-4 bg-gradient-to-br from-orange-500 to-orange-400 text-white rounded-lg shadow-lg transform transition-transform hover:scale-105">
-        <img
-          src="https://www.shutterstock.com/image-photo/burger-tomateoes-lettuce-pickles-on-600nw-2309539129.jpg"
-          alt={title}
-          className="w-full h-44 object-cover rounded-t-lg"
-        />
-        <div className="p-4 bg-white bg-opacity-10 rounded-b-lg">
-          <h2 className="text-lg font-bold text-white mb-2">{title}</h2>
-          <p className="text-sm text-orange-100 mb-3">{description}</p>
-          <p className="text-lg font-bold text-orange-200 mb-3">${price}</p>
-
-          <div className="flex items-center gap-3 mb-3">
-            <select
-              value={quantity}
-              onChange={(e) => setQuantity(e.target.value)}
-              className="p-1 text-gray-700 border border-gray-300 rounded"
-            >
-              {[1, 2, 3, 4, 5].map((num) => (
-                <option key={num} value={num}>
-                  {num}
-                </option>
-              ))}
-            </select>
-
-            <button className="px-3 py-2 bg-white text-orange-500 rounded hover:bg-orange-100 transition">
-              Add to Cart
-            </button>
-          </div>
-
-          <div>Total Price: ${(price * quantity).toFixed(2)}</div>
-        </div>
+    <div className="bg-white shadow-md rounded-lg p-4 border border-gray-200 flex flex-col justify-between h-full">
+      <img 
+        src={item.image} 
+        alt={item.name} 
+        className="w-full h-32 rounded-lg object-cover mb-4"
+      />
+      <div className="text-left flex-1">
+        <h3 className="text-lg font-medium text-gray-800 mb-2">{item.name}</h3>
+        <p className="text-gray-600 mb-2">{item.description}</p>
+        <span className="text-lg font-semibold text-gray-700">${item.price.toFixed(2)}</span>
+      </div>
+      <div className="flex items-center justify-between mt-4">
+        <button 
+          className="px-2 py-1 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400"
+          onClick={decreaseItemCount}
+          disabled={itemCount === 0}
+        >
+          -
+        </button>
+        <span className="mx-2 text-lg font-semibold text-gray-700">{itemCount}</span>
+        <button 
+          className="px-2 py-1 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400"
+          onClick={increaseItemCount}
+        >
+          +
+        </button>
       </div>
     </div>
   );
 };
 
-export default FoodItemCard;
+export default Item;
 
