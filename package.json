@@ -1,18 +1,35 @@
 {
   "name": "zestfuse",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "main": "app.js",
+  "description": "Combined frontend and backend dependencies",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.27.0"
+    "react-router-dom": "^6.27.0",
+    "bcrypt": "^5.1.1",
+    "config": "^3.3.12",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.7",
+    "debug": "^4.3.7",
+    "dotenv": "^16.4.5",
+    "export": "^0.1.337",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "globally": "^0.0.0",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.0",
+    "nodemon": "^3.1.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
